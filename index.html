@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="逐条解锁规则，用一份构造挑战四档算法难度。"><title>构造大师</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23121620'/%3E%3Cpath d='M7 7h8v8H7zm10 0h8v8h-8zM7 17h8v8H7z' fill='%23baf267'/%3E%3Cpath d='M17 17h8v8h-8z' fill='%23677896'/%3E%3C/svg%3E"><style>500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+:root{color-scheme:dark;--bg:#0d1119;--panel:#151b26;--line:#283142;--muted:#9aa7ba;--text:#edf2f8;--accent:#baf267;--mono:'JetBrains Mono',Consolas,monospace}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 'Noto Sans SC',system-ui,sans-serif}button,a,textarea{ -webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}header{height:84px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 4.5%}.brand{display:flex;align-items:center;gap:14px;color:var(--text);text-decoration:none}.mark{font-size:33px;color:var(--accent);line-height:1}.brand strong{font-size:22px;letter-spacing:1px}.edition{font:12px var(--mono);letter-spacing:1px;color:var(--muted);padding-left:15px;border-left:1px solid var(--line)}.secondary{border:1px solid #394457;border-radius:7px;background:transparent;color:#c4cede;padding:9px 17px}.secondary:hover{background:#263043;color:#fff}.help{font-size:14px}.help span{display:inline-grid;place-items:center;border:1px solid #647187;border-radius:50%;width:18px;height:18px;margin-left:8px;font:12px var(--mono)}main{max-width:1490px;padding:42px 4.5% 0;margin:auto}.heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}.eyebrow,.tiny{font:12px/1.5 var(--mono);letter-spacing:1.6px;color:var(--muted)}.eyebrow{color:var(--accent)}h1{font-size:clamp(25px,2.6vw,36px);line-height:1.45;margin:12px 0 8px;font-weight:700;letter-spacing:-.7px}h1 span{color:var(--accent)}.heading p{margin:0;color:var(--muted);font-size:15px}.maxscore{display:flex;flex-direction:column;padding-right:8px;color:var(--muted);font-size:13px}.maxscore strong{font:44px/1.2 var(--mono);color:var(--accent);margin-top:8px}.maxscore small{font:14px 'Noto Sans SC',sans-serif}.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:26px}.level{background:#141a24;border:1px solid var(--line);border-radius:9px;padding:17px 20px;text-align:left;color:var(--text);position:relative;transition:.15s}.level:hover{background:#1b2330;border-color:#647187}.level.active{border-color:var(--accent);background:#1d2920;box-shadow:inset 0 3px var(--accent)}.level-top{display:flex;align-items:center;justify-content:space-between}.level-name{font-size:19px;font-weight:600}.level-point{font:16px var(--mono);color:var(--muted)}.active .level-point{color:var(--accent)}.level-bottom{display:flex;justify-content:space-between;margin-top:9px;font-size:13px;color:var(--muted)}.level-bottom span:last-child{font-family:var(--mono)}.workspace{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(330px,1fr);gap:22px;align-items:start}.editor-panel,.rules-panel{border:1px solid var(--line);border-radius:11px;background:var(--panel);overflow:hidden}.panel-head{display:flex;align-items:center;justify-content:space-between;padding:22px 25px 18px}h2{font-size:19px;margin:5px 0 0;line-height:1.5;font-weight:600}.live{color:var(--muted);font-size:12px;display:flex;gap:7px;align-items:center}.live i{width:6px;height:6px;background:var(--accent);border-radius:50%}.format{margin:0 24px 18px;padding:12px 15px;border:1px solid #2b3547;border-radius:6px;background:#1b2331;color:#b4c1d3;font-size:14px}.edit-wrap{display:flex;position:relative;height:340px;margin:0 24px;border:1px solid #344055;border-radius:7px;background:#0e141e;overflow:hidden}.edit-wrap:focus-within{border-color:var(--accent)}.gutter{width:44px;flex-shrink:0;padding:18px 10px;text-align:right;font:14px/25px var(--mono);color:#5b6a80;background:#121923;border-right:1px solid #253044;white-space:pre;overflow:hidden;user-select:none}textarea{z-index:1;resize:none;width:100%;height:100%;border:0;outline:0;background:transparent;color:#ecf2ff;padding:18px 15px;font:15px/25px var(--mono);tab-size:2;white-space:pre}textarea::placeholder{color:#697991;font-family:'Noto Sans SC',sans-serif;font-size:14px}.empty-grid{position:absolute;left:50%;top:50%;transform:translate(-35%,-50%);display:flex;gap:16px;align-items:center;color:#28394a;font:36px/1.7 var(--mono);pointer-events:none}.empty-grid>span{font-size:85px;font-weight:400;color:#263344}.edit-wrap.has-text .empty-grid{display:none}.editor-meta{display:flex;justify-content:space-between;gap:12px;padding:11px 24px;color:var(--muted);font-size:12px}.editor-meta span:first-child{font-family:var(--mono)}.actions{padding:13px 24px 21px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.primary{background:var(--accent);color:#16210b;padding:10px 19px;border:1px solid var(--accent);border-radius:7px;font-weight:600}.primary:hover{background:#ceff89}.primary span{margin-left:20px;font-size:18px}.actions #status{font-size:13px;color:var(--muted);flex-basis:100%;min-height:22px}.conventions{border-top:1px solid var(--line);padding:13px 24px;font-size:14px;color:var(--muted)}summary{cursor:pointer;color:#b7c4d5}.conventions p{font-size:14px;line-height:1.85;margin:12px 0}.fraction{font:26px var(--mono);color:var(--accent)}.fraction span{font-size:16px;color:var(--muted)}.progress{height:4px;background:#2b3444;margin:0 25px 23px;border-radius:5px;overflow:hidden}.progress>div{height:100%;background:var(--accent);width:0;transition:width .3s}.rule-list{padding:0 23px;max-height:470px;overflow-y:auto;scrollbar-width:thin}.rule{display:flex;gap:14px;padding:17px 15px;border:1px solid var(--line);border-radius:7px;margin-bottom:10px;background:#161e2b}.rule.current{border-color:#576944;background:#20291e}.rule.passed{background:#172321;border-color:#2d423c}.rule-num{width:25px;height:25px;flex-shrink:0;display:grid;place-items:center;border:1px solid #6e8059;color:var(--accent);border-radius:5px;font:12px var(--mono);margin-top:2px}.passed .rule-num{border-color:#436b55;color:#a8debe}.rule-label{font:12px var(--mono);color:var(--accent);margin-bottom:6px}.passed .rule-label{color:#98cbb1}.rule p{margin:0;color:#e3e9f1;font-size:14px;line-height:1.8}.rule-error{color:#c6a995;font-size:12px;margin-top:9px}.locked{margin:17px 24px 24px;display:flex;align-items:center;gap:13px;color:#6f8095;padding:8px 0}.locked>span:first-child{font-size:25px}.locked strong{font-weight:500;font-size:14px;color:#9baabd}.locked p{margin:2px 0 0;font-size:12px}.locked #remaining{margin-left:auto;font:13px var(--mono)}.reward{display:flex;align-items:center;gap:15px;padding:20px 24px;border-top:1px solid var(--line);background:#181f2b}.reward-icon{color:var(--accent);font-size:32px}.reward p{margin:5px 0 0;font-size:14px;color:#a9b6c8}.reward strong{color:var(--accent);margin-right:5px}footer{display:flex;justify-content:space-between;color:#7c8da3;padding:23px 0 30px;font-size:12px}dialog{background:#171f2c;color:var(--text);border:1px solid #42506a;border-radius:15px;max-width:490px;width:calc(100% - 36px);padding:35px}dialog::backdrop{background:#060a12cd;backdrop-filter:blur(5px)}dialog h2{font-size:27px;margin:12px 0 18px}dialog p{color:#aebbcd;font-size:15px}dialog .close{position:absolute;right:16px;top:10px;background:none;border:0;color:#aebbcd;font-size:26px}#success-dialog{text-align:center}.success-symbol{color:var(--accent);font-size:58px}.code{background:#0e151e;border:1px solid #465936;border-radius:8px;padding:20px;margin:22px 0;font:42px var(--mono);letter-spacing:10px;color:var(--accent)}#success-dialog .secondary{margin-left:8px}.copy-state{min-height:24px;margin-bottom:0}button:disabled{opacity:.5;cursor:wait}@media(min-width:1500px){.edit-wrap{height:410px}}@media(max-width:900px){.workspace{grid-template-columns:1fr}.edition{display:none}.maxscore{display:none}.rule-list{max-height:none}.levels{gap:8px}.level{padding:14px 12px}.level-bottom{display:block}.level-bottom span:last-child{display:none}.heading{margin-bottom:24px}.editor-meta span:last-child{display:none}main{padding-top:26px}.edit-wrap{height:300px}footer{gap:20px}.rules-panel{margin-bottom:8px}}@media(max-width:480px){header{height:68px;padding:0 18px}.brand{gap:8px}.brand strong{font-size:20px}.help{padding:7px 10px}.help span{display:none}main{padding:25px 16px 0}.levels{grid-template-columns:repeat(2,1fr)}h1{font-size:25px}.level-name{font-size:17px}.panel-head{padding:20px}.format{margin-left:18px;margin-right:18px}.edit-wrap{margin:0 18px}.editor-meta,.actions{padding-left:18px;padding-right:18px}footer{flex-direction:column;gap:5px}.empty-grid{font-size:29px}dialog{padding:28px 23px}.conventions{padding:12px 18px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.locked[hidden]{display:none}
+</style></head>
+<body><header><a class="brand" href="./" aria-label="构造大师首页"><span class="mark">▦</span><strong>构造大师</strong><span class="edition">CONSTRUCTION MASTER</span></a><button class="help secondary" id="help">玩法说明 <span>?</span></button></header>
+<main><div class="heading"><div><div class="eyebrow">ALGORITHM PLAYGROUND / 01</div><h1>每一步，都让构造更精巧<span>.</span></h1><p>写下你的构造。满足一条限制，揭开下一条。</p></div><div class="maxscore"><span>最高挑战</span><strong>70<small> 分</small></strong></div></div>
+<nav class="levels" aria-label="选择难度"></nav>
+<section class="workspace"><div class="editor-panel"><div class="panel-head"><div><span class="tiny">YOUR CONSTRUCTION</span><h2>构造工作区</h2></div><span class="live"><i></i>实时校验</span></div><div class="format" id="format"></div>
+<div class="edit-wrap"><div class="gutter" id="gutter" aria-hidden="true">1</div><textarea id="input" aria-label="输入你的构造" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off" placeholder="从第一条限制开始…"></textarea><div class="empty-grid" aria-hidden="true"><span>[</span><div>1 0 A<br>+ 1 B<br>C ! 0</div><span>]</span></div></div>
+<div class="editor-meta"><span id="metrics">1 行 · 0 字符</span><span>Tab 插入空格 · Ctrl / ⌘ + Enter 校验</span></div><div class="actions"><button class="primary" id="check">校验构造 <span>↵</span></button><button class="secondary" id="reset">清空</button><span id="status" role="status" aria-live="polite">等待你的第一步构造</span></div>
+<details class="conventions"><summary>计数与输入约定</summary><p>空行参与校验；末尾换行会产生一个空行。行列坐标从 1 开始，空格占一格。回文允许长度为 1；子序列可以不连续，按选取的位置分别计数。NOI 的整数按连续数字串识别，前导零不改变数值，符号 - 不表示负号。字母区分大小写，曼哈顿距离是行差与列差绝对值之和。</p><p>为保持浏览器响应，单份输入最多 250000 字符。较大的构造在独立线程中校验。</p></details></div>
+<aside class="rules-panel"><div class="panel-head"><div><span class="tiny">THE CHALLENGE</span><h2>限制清单</h2></div><span class="fraction" id="fraction">0 <span>/ 6</span></span></div><div class="progress"><div id="bar"></div></div><div class="rule-list" id="rules" aria-live="polite"></div><div class="locked" id="locked"><span>▣</span><div><strong>下一条限制尚未解锁</strong><p>满足前面的所有限制后揭晓</p></div><span id="remaining"></span></div><div class="reward"><span class="reward-icon">✳</span><div><span class="tiny">CLEAR REWARD</span><p>全部通过，领取 <strong id="reward-points">20 分</strong>口令</p></div></div></aside></section>
+<footer><span>规则是边界，构造是自由。</span><span>6 / 10 / 15 / 20 条限制 · 四档挑战</span></footer></main>
+<dialog id="help-dialog"><button class="close" data-close aria-label="关闭">×</button><span class="eyebrow">HOW TO PLAY</span><h2>从一条规则开始</h2><p>选择难度，在工作区输入构造。只要前面的规则全部满足，下一条就会自动出现。</p><p>新增规则可能让你重新调整整份构造；已经通过的规则也必须继续成立。直到所有规则同时通过，才能获得对应分数的口令。</p><p>四档难度可自由选择，每档保留本次打开网页期间的独立草稿。提高是排列挑战，省选是有向图挑战。</p><button class="primary" data-close>开始构造</button></dialog>
+<dialog id="success-dialog"><button class="close" data-close aria-label="关闭">×</button><div class="success-symbol">✳</div><span class="eyebrow">CONSTRUCTION COMPLETE</span><h2>构造成功！</h2><p id="success-text"></p><div class="code" id="code"></div><button class="primary" id="copy">复制口令</button><button class="secondary" data-close>继续挑战</button><p class="copy-state" id="copy-state" role="status"></p></dialog>
+<script id="validation-engine">/* Shared validator: coordinates count ASCII characters; numbers are maximal digit runs. */
+(function(root){
+'use strict';
+const prime=n=>{if(n<2||!Number.isSafeInteger(n))return false;for(let d=2;d*d<=n;d++)if(n%d===0)return false;return true};
+const gcd=(a,b)=>{while(b){[a,b]=[b,a%b]}return a};
+const phi=n=>{let r=n;for(let p=2;p*p<=n;p++)if(n%p===0){while(n%p===0)n/=p;r-=r/p}if(n>1)r-=r/n;return r};
+const letter=c=>!!c&&/^[A-Za-z]$/.test(c),digit=c=>!!c&&/^[0-9]$/.test(c),pal=s=>s===s.split('').reverse().join('');
+const levels=[
+{name:'普及',theme:'符号方阵',points:20,code:'F1C9',count:6,desc:'用字符搭建一座严丝合缝的方阵。',format:'每行等长，行数等于列数。每个字符占一格。',rules:[
+'必须是只包含数字、大小写英文字母和 !、+、- 的非空正方形矩阵。',
+'每个特殊符号的上下左右四格都必须存在。',
+'+ 的上下左右全为 1；- 的左右全为 1、上下全不为 1；! 的上下全为 1、左右全不为 1。',
+'每个数字周围八格至少有一个字母；每个字母周围八格至少有一个特殊符号。',
+'0 和 1 的数量相同；其余数字周围八格必须存在且全为字母。',
+'有且仅有 3 行、3 列是回文。']},
+{name:'提高',theme:'排列密码',points:35,code:'297A',count:10,desc:'差值、环与前缀互相牵制的排列挑战。',format:'一行正整数，用单个空格分隔。第 i 个数记为 a[i]，下标从 1 开始。',rules:[
+'输入一行正整数，用单个空格分隔，不允许前导零。',
+'数字个数必须恰好为 16。',
+'每个数字 1 到 16 都恰好出现一次。',
+'没有任何数字停在原位：第 i 个数字不能等于 i。',
+'把 i 指向 a[i]，所有位置必须组成一个覆盖全部位置的环。',
+'15 个相邻绝对差 |a[i+1]−a[i]| 必须恰好是 1 到 15 各一次。',
+'前 8 个数的和必须等于后 8 个数的和。',
+'对于每个非空前缀，其中奇数和偶数的个数之差的绝对值不能超过 2。',
+'最长严格递增子序列的长度必须恰好为 6。',
+'内部位置中恰有 6 个峰、7 个谷。峰比左右邻居都大，谷比左右邻居都小；首尾不计。']},
+{name:'省选',theme:'有向图工坊',points:50,code:'73A9',count:15,desc:'从一条边开始，构造一张精密的有向网络。',format:'第一行写顶点数 n；之后每行写 u v，代表一条有向边 u → v。顶点编号从 1 开始。',rules:[
+'第一行是正整数 n，之后至少一行，每行是两个正整数 u v，用单个空格分隔；不允许前导零。',
+'n 是偶数，且 8 ≤ n ≤ 16。',
+'所有端点都在 1 到 n 之间。',
+'不允许自环，也不允许重复的有向边。',
+'边数恰好是 2n。',
+'每个顶点的出度恰好为 2。',
+'每个顶点的入度恰好为 2。',
+'任意两个顶点之间都存在有向路径。',
+'不允许互相指向：u → v 和 v → u 不能同时出现。',
+'每条边的两个端点编号奇偶性不同。',
+'必须包含 1 → 2 → … → n → 1 这个有向环。',
+'去掉这个指定环的边后，剩余边也必须形成一个覆盖全部顶点的有向环。',
+'任意顶点都能在最多 4 条边内到达任意其他顶点。',
+'对任意顶点 u，把每个出邻居 v 的循环距离 (v−u+n) mod n 相加；所有顶点的和必须相同。',
+'恰好存在 3n/2 个不同的有向四环（只合并旋转，反向视为不同）。']},
+{name:'NOI',theme:'终极构造',points:70,code:'048A',count:20,desc:'数论、皇后与字符几何，在同一份构造中相遇。',format:'输入多行字符。空格占一格，换行不计字符数；整数是连续数字串，- 作为特殊符号。',rules:[
+'只允许大小写英文字母、数字、!、=、-、+、%、$、#、@ 和空格。',
+'所有正整数不得超过 10⁹。',
+'所有整数的异或和为 0。',
+'每行至少有一个整数。',
+'从上到下，行长必须严格递增。',
+'每行任意相邻两个整数必须互质。',
+'所有行的首字符必须两两不同。',
+'安排至少 8 个皇后 Q；任意两个 Q 不得同行、同列或同斜线。',
+'字符总数（含空格，不含换行）必须为质数。',
+'每个 Q 的上下左右四格必须存在且全为数字。',
+'含 Q 的行不能有空格。',
+'所有整数不得重复（按数值判断）。',
+'每个整数的欧拉函数值也必须出现；欧拉函数仅对正整数定义，不能含 0。',
+'需要包含 NOI2026 六道题目的英文名称（连续小写字母）。',
+'@ 的个数为奇数；任意两个 @ 的曼哈顿距离大于 20。',
+'每个空格在曼哈顿距离不超过 20 的范围内至少有一个 @。',
+'每行至少有 3 个长度 ≥ 2、不含空格的回文子序列（按下标选择计数）。',
+'每种出现过的英文字母，其出现次数均为质数（区分大小写）。',
+'每行的英文字母数量相同。',
+'每个特殊符号的周围八格必须存在且全部为空格。']}
+];
+function validate(level,text){
+const cfg=levels[level];if(!cfg)throw Error('未知难度');
+text=text.replace(/\r\n?/g,'\n');
+if(text.length>250000)return{results:[false],errors:['输入超过 250000 字符，请缩短后重试。'],limited:true};
+const lines=text.split('\n'),at=(r,c)=>lines[r]?.[c],all=(fn)=>lines.every((s,r)=>[...s].every((c,i)=>fn(c,r,i))),near=(r,c,diag)=>{const a=[];for(let x=-1;x<=1;x++)for(let y=-1;y<=1;y++)if((x||y)&&(diag||Math.abs(x)+Math.abs(y)===1))a.push(at(r+x,c+y));return a};
+const results=[],errors=[];const put=(ok,why)=>{results.push(!!ok);errors.push(ok?'已满足':why)};
+const notempty=text.length>0;
+if(level===0){
+put(notempty&&lines.every(s=>s.length===lines.length&&/^[A-Za-z0-9!+\-]+$/.test(s)),'需要非空正方形；只能使用规定的字符。');
+put(all((c,r,i)=>!/[!+\-]/.test(c)||near(r,i,false).every(x=>x!==undefined)),'特殊符号不能在边界上。');
+put(all((c,r,i)=>{if(!/[!+\-]/.test(c))return true;let u=at(r-1,i),d=at(r+1,i),l=at(r,i-1),rr=at(r,i+1);return c==='+'?[u,d,l,rr].every(x=>x==='1'):c==='-'?l==='1'&&rr==='1'&&u!==undefined&&d!==undefined&&u!=='1'&&d!=='1':u==='1'&&d==='1'&&l!==undefined&&rr!==undefined&&l!=='1'&&rr!=='1'}),'检查 +、-、! 周围的 1 的方向。');
+put(all((c,r,i)=>digit(c)?near(r,i,true).some(letter):letter(c)?near(r,i,true).some(x=>x&&/[!+\-]/.test(x)):true),'数字旁需要字母，字母旁需要特殊符号。');
+put([...text].filter(x=>x==='0').length===[...text].filter(x=>x==='1').length&&all((c,r,i)=>!/[2-9]/.test(c)||near(r,i,true).every(letter)),'0 和 1 数量应相同；2–9 周围八格应全为字母。');
+const cols=Array.from({length:lines[0].length},(_,c)=>lines.map(s=>s[c]??'').join(''));
+put(lines.filter(pal).length===3&&cols.filter(pal).length===3,'回文行、回文列都必须恰好是 3 个。');
+}else if(level===1){
+const valid=/^[1-9]\d*( [1-9]\d*)*$/.test(text),a=valid?text.split(' ').map(Number):[],n=a.length,per=valid&&n===16&&a.every(x=>x<=16)&&new Set(a).size===16;
+put(valid,'请使用一行正整数和单个空格。');put(n===16,'需要恰好 16 个整数。');put(per,'需要恰好包含 1 到 16 各一次。');put(per&&a.every((x,i)=>x!==i+1),'存在数字留在原位置，或不是合法排列。');
+const seen=new Set();let x=1;while(per&&!seen.has(x)&&x>=1&&x<=n){seen.add(x);x=a[x-1]}put(per&&seen.size===n&&x===1,'置换中存在多个环或不是合法排列。');
+const diffs=a.slice(1).map((v,i)=>Math.abs(v-a[i]));put(per&&new Set(diffs).size===15&&diffs.every(d=>d>=1&&d<=15),'相邻差值有重复，或缺少 1–15 中的差值。');
+const left=a.slice(0,8).reduce((s,v)=>s+v,0),right=a.slice(8).reduce((s,v)=>s+v,0);put(per&&left===right,'前半段与后半段的和不相等。');
+let balance=0;const balanced=per&&a.every(v=>{balance+=v%2?1:-1;return Math.abs(balance)<=2});put(balanced,'某个前缀的奇偶个数差超过 2。');
+const tails=[];if(per)for(const v of a){let k=0;while(k<tails.length&&tails[k]<v)k++;tails[k]=v}put(per&&tails.length===6,`当前最长递增子序列长 ${tails.length}，需要 6。`);
+let peaks=0,valleys=0;if(per)for(let i=1;i<n-1;i++){if(a[i]>a[i-1]&&a[i]>a[i+1])peaks++;if(a[i]<a[i-1]&&a[i]<a[i+1])valleys++}put(per&&peaks===6&&valleys===7,`当前有 ${peaks} 个峰、${valleys} 个谷；需要 6 个峰、7 个谷。`);
+}else if(level===2){
+const syntax=lines.length>=2&&/^[1-9]\d*$/.test(lines[0])&&lines.slice(1).every(s=>/^[1-9]\d* [1-9]\d*$/.test(s));
+const n=Number(lines[0]),e=syntax?lines.slice(1).map(s=>s.split(' ').map(Number)):[],safe=syntax&&n>=8&&n<=16&&n%2===0,range=safe&&e.every(([u,v])=>u<=n&&v<=n),keys=new Set(e.map(([u,v])=>u+','+v)),g=Array.from({length:safe?n:0},()=>[]),incoming=Array(safe?n:0).fill(0);
+if(range)for(const[u,v]of e){g[u-1].push(v-1);incoming[v-1]++}
+put(syntax,'首行写 n，其余行写 u v；不要额外空行。');put(safe,'n 必须是 8–16 之间的偶数。');put(range,'所有端点应在 1…n 内。');put(syntax&&e.every(([u,v])=>u!==v)&&keys.size===e.length,'不能有自环或重复边。');put(safe&&e.length===2*n,'边数必须为 2n。');put(range&&g.every(a=>a.length===2),'每个顶点出度必须为 2。');put(range&&incoming.every(x=>x===2),'每个顶点入度必须为 2。');
+const distances=range?g.map((_,s)=>{const d=Array(n).fill(Infinity),q=[s];d[s]=0;for(let k=0;k<q.length;k++)for(const v of g[q[k]])if(d[v]===Infinity){d[v]=d[q[k]]+1;q.push(v)}return d}):[];
+put(range&&distances.every(d=>d.every(Number.isFinite)),'图必须强连通。');put(syntax&&e.every(([u,v])=>!keys.has(v+','+u)),'检测到双向边。');put(syntax&&e.every(([u,v])=>u%2!==v%2),'每条边应连接奇数编号和偶数编号。');
+const cycle=range&&g.every((a,u)=>a.includes((u+1)%n));put(cycle,'指定的顺序环缺边。');
+const rest=range?g.map((a,u)=>a.filter(v=>v!==(u+1)%n)):[],seen=new Set();let u=0;while(range&&rest.every(a=>a.length===1)&&!seen.has(u)){seen.add(u);u=rest[u][0]}put(cycle&&seen.size===n&&u===0,'剩余边必须形成一个大环。');put(range&&distances.every(d=>d.every(x=>x<=4)),'存在最短路径超过 4 或不可达的顶点对。');
+const sums=g.map((a,u)=>a.reduce((s,v)=>s+(v-u+n)%n,0));put(range&&sums.every(x=>x===sums[0]),'各顶点出边的循环距离之和不相同。');
+let cycles=0;if(range&&keys.size===e.length)for(let a=0;a<n;a++)for(const b of g[a])if(b>a)for(const c of g[b])if(c>a&&c!==b)for(const d of g[c])if(d>a&&d!==b&&d!==c&&g[d].includes(a))cycles++;
+put(range&&cycles===3*n/2,`当前有 ${cycles} 个不同的有向四环，需要 ${safe?3*n/2:'3n/2'} 个。`);
+}else{
+const ns=lines.map(s=>(s.match(/\d+/g)||[]).map(v=>BigInt(v))),nums=ns.flat(),bound=nums.every(x=>x<=1000000000n),coords=c=>{let a=[];lines.forEach((s,r)=>[...s].forEach((x,i)=>{if(x===c)a.push([r,i])}));return a},queens=coords('Q'),ats=coords('@'),spaces=coords(' '),dist=(a,b)=>Math.abs(a[0]-b[0])+Math.abs(a[1]-b[1]);
+put(notempty&&lines.every(s=>/^[A-Za-z0-9!=+%$#@ \-]*$/.test(s)),'出现了允许范围以外的字符。');put(bound,'某个整数超过了 10⁹。');put(nums.length>0&&nums.reduce((a,b)=>a^b,0n)===0n,'整数异或和不是 0。');put(ns.every(a=>a.length>0),'存在没有整数的行。');put(lines.every((s,i)=>!i||s.length>lines[i-1].length),'行长必须严格递增。');put(bound&&ns.every(a=>a.every((x,i)=>!i||gcd(Number(x),Number(a[i-1]))===1)),'同一行中有相邻整数不互质。');put(lines.every(s=>s.length)&&new Set(lines.map(s=>s[0])).size===lines.length,'有行首字符重复或空行。');
+put(queens.length>=8&&queens.every(([r,c],i)=>queens.slice(i+1).every(([s,d])=>r!==s&&c!==d&&Math.abs(r-s)!==Math.abs(c-d))),'需要至少 8 个互不攻击的 Q。');put(prime(lines.reduce((s,l)=>s+l.length,0)),'字符总数不是质数。');put(queens.every(([r,c])=>near(r,c,false).every(digit)),'Q 的四个正交邻格必须都是数字。');put(lines.every(s=>!s.includes('Q')||!s.includes(' ')),'含 Q 的行出现了空格。');const set=new Set(nums.map(String));put(set.size===nums.length,'有整数重复（前导零不改变数值）。');
+const cache=new Map();put(bound&&nums.every(x=>{if(x===0n)return false;let n=Number(x);if(!cache.has(n))cache.set(n,phi(n));return set.has(String(cache.get(n)))}),'缺少某个欧拉函数值，或输入含 0。');put(['segment','pudding','teleport','median','kapok','rainbow'].every(s=>text.includes(s)),'仍缺少题目英文名称。');put(ats.length%2===1&&ats.every((a,i)=>ats.slice(i+1).every(b=>dist(a,b)>20)),'@ 的数量应为奇数，且两两距离大于 20。');put(spaces.every(a=>ats.some(b=>dist(a,b)<=20)),'有空格没有在 20 步内找到 @。');
+put(lines.every(s=>{s=s.replace(/ /g,'');let count=0;const positions={};for(let i=0;i<s.length;i++){for(const j of positions[s[i]]||[]){count+=1+i-j-1;if(count>=3)return true}(positions[s[i]]??=[]).push(i)}return false}),'某一行的回文子序列不足 3 个。');
+const letters={};for(const c of text)if(letter(c))letters[c]=(letters[c]||0)+1;put(Object.values(letters).every(prime),'某种已出现字母的次数不是质数。');const counts=lines.map(s=>(s.match(/[A-Za-z]/g)||[]).length);put(counts.every(x=>x===counts[0]),'各行字母个数不同。');put(all((c,r,i)=>!/[!=+%$#@\-]/.test(c)||near(r,i,true).every(x=>x===' ')),'特殊符号的八个邻格必须存在且全为空格。');
+}
+let prefix=0;while(prefix<results.length&&results[prefix])prefix++;
+return{results,errors,prefix,complete:prefix===cfg.count,rows:lines.length,chars:lines.reduce((s,l)=>s+l.length,0)};
+}
+root.Construct={levels,validate};
+if(typeof module!=='undefined')module.exports=root.Construct;
+})(typeof self!=='undefined'?self:globalThis);
+</script><script>window.CONSTRUCTION_WORKER_URL=URL.createObjectURL(new Blob([document.getElementById('validation-engine').textContent,`\nonmessage=({data})=>{try{postMessage({id:data.id,...Construct.validate(data.level,data.text)})}catch(e){postMessage({id:data.id,error:'校验失败，请检查输入后重试。'})}};`],{type:'text/javascript'}));</script><script>'use strict';
+const $=s=>document.querySelector(s),levels=Construct.levels,input=$('#input'),drafts=levels.map(()=>''),celebrated=levels.map(()=>false);
+let level=0,sequence=0,worker,timer,watchdog,last=null;
+function createWorker(){try{worker=new Worker(window.CONSTRUCTION_WORKER_URL||'worker.js');worker.onmessage=({data})=>{if(data.id!==sequence)return;clearTimeout(watchdog);if(data.error){$('#status').textContent=data.error;return}last=data;render(data);};worker.onerror=()=>{$('#status').textContent='校验线程出现问题，请再次点击校验。';clearTimeout(watchdog);worker.terminate();worker=null}}catch(e){worker=null}}
+createWorker();
+function nav(){const n=$('.levels');n.innerHTML='';levels.forEach((c,i)=>{const b=document.createElement('button');b.className='level'+(i===level?' active':'');b.setAttribute('aria-pressed',i===level);b.innerHTML=`<div class="level-top"><span class="level-name">${c.name}</span><span class="level-point">${c.points}<small> 分</small></span></div><div class="level-bottom"><span>${c.theme}</span><span>${String(c.count).padStart(2,'0')} RULES</span></div>`;b.onclick=()=>select(i);n.appendChild(b)})}
+function select(i){drafts[level]=input.value;level=i;input.value=drafts[i];last=null;sequence++;clearTimeout(timer);clearTimeout(watchdog);$('#format').textContent=levels[i].format;$('#reward-points').textContent=levels[i].points+' 分';nav();metrics();render({prefix:0,results:[],errors:[]});schedule();}
+function metrics(){const ls=input.value.split('\n');$('#metrics').textContent=`${ls.length} 行 · ${ls.reduce((a,s)=>a+s.length,0)} 字符`;$('#gutter').textContent=ls.map((_,i)=>i+1).join('\n');$('.edit-wrap').classList.toggle('has-text',!!input.value)}
+function schedule(){sequence++;clearTimeout(timer);clearTimeout(watchdog);last=null;render({prefix:0,results:[],errors:[]});$('#status').textContent=input.value?'正在等待校验…':'等待你的第一步构造';timer=setTimeout(check,280)}
+function check(){clearTimeout(timer);const id=++sequence;drafts[level]=input.value;if(!input.value){last=null;render({prefix:0,results:[],errors:[]});$('#status').textContent='等待你的第一步构造';return}$('#status').textContent='正在校验构造…';clearTimeout(watchdog);if(!worker)createWorker();if(worker){worker.terminate();createWorker()}if(worker){worker.postMessage({id,level,text:input.value});watchdog=setTimeout(()=>{worker.terminate();worker=null;$('#status').textContent='本次校验超过 12 秒，请缩短构造后重试。'},12000)}else{try{const d=Construct.validate(level,input.value);last=d;render(d)}catch(e){$('#status').textContent='无法校验，请检查输入后重试。'}}}
+function render(d){const c=levels[level],prefix=d.prefix||0,visible=Math.min(c.count,prefix+1);$('#fraction').innerHTML=`${prefix} <span>/ ${c.count}</span>`;$('#bar').style.width=(prefix/c.count*100)+'%';const list=$('#rules');list.innerHTML='';for(let i=0;i<visible;i++){const card=document.createElement('div');card.className='rule '+(i<prefix?'passed':'current');const num=document.createElement('div');num.className='rule-num';num.textContent=i<prefix?'✓':String(i+1).padStart(2,'0');const body=document.createElement('div'),label=document.createElement('div'),p=document.createElement('p');label.className='rule-label';label.textContent=i<prefix?'已满足 / PASSED':'当前限制 / ACTIVE';p.textContent=c.rules[i];body.append(label,p);if(i===prefix&&d.errors?.[i]){const e=document.createElement('div');e.className='rule-error';e.textContent=d.errors[i];body.append(e)}card.append(num,body);list.append(card)}$('#locked').hidden=visible===c.count;$('#remaining').textContent=String(c.count-visible).padStart(2,'0');if(d.limited){$('#status').textContent=d.errors[0];return}if(d.complete){$('#status').textContent=`全部 ${c.count} 条规则通过！`;if(!celebrated[level]){celebrated[level]=true;showSuccess()}}else if(input.value&&d.results?.length){$('#status').textContent=`已满足 ${prefix} 条 · 正在挑战第 ${prefix+1} 条`}}
+function showSuccess(){const c=levels[level];$('#success-text').textContent=`${c.name}难度全部通过。输出这个口令到题里有 ${c.points} 分。`;$('#code').textContent=c.code;$('#copy-state').textContent='';$('#success-dialog').showModal()}
+input.addEventListener('input',()=>{metrics();schedule()});input.addEventListener('scroll',()=>{$('#gutter').scrollTop=input.scrollTop});input.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();input.setRangeText(' ',input.selectionStart,input.selectionEnd,'end');metrics();schedule()}if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();check()}});$('#check').onclick=()=>{if(last?.complete)showSuccess();else check()};$('#reset').onclick=()=>{input.value='';drafts[level]='';celebrated[level]=false;metrics();schedule();input.focus()};$('#help').onclick=()=>$('#help-dialog').showModal();document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());document.querySelectorAll('dialog').forEach(d=>d.onclick=e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()}});
+$('#copy').onclick=async()=>{try{await navigator.clipboard.writeText($('#code').textContent);$('#copy-state').textContent='口令已复制'}catch(e){$('#copy-state').textContent='请选中上方口令，手动复制。'}};
+select(0);
+if(document.modelContext?.registerTool){try{Promise.resolve(document.modelContext.registerTool({name:'set_construction',description:'选择难度并填写构造，运行与游戏界面相同的校验。',inputSchema:{type:'object',properties:{level:{type:'integer',minimum:0,maximum:3},text:{type:'string',maxLength:250000}},required:['level','text'],additionalProperties:false},annotations:{readOnlyHint:false},execute:async value=>{if(!value||!Number.isInteger(value.level)||value.level<0||value.level>3||typeof value.text!=='string'||value.text.length>250000)throw Error('输入参数无效');select(value.level);input.value=value.text;metrics();check();const started=sequence;return await new Promise((resolve,reject)=>{let count=0;const t=setInterval(()=>{if(sequence!==started){clearInterval(t);reject(Error('构造已被修改'));return}if(last){clearInterval(t);resolve({passed:last.prefix,total:levels[level].count,complete:last.complete,activeRule:last.complete?null:levels[level].rules[last.prefix],message:last.errors?.[last.prefix]})}else if(++count>140){clearInterval(t);reject(Error('校验超时'))}},100)})}})).catch(()=>{})}catch(e){/* Optional browser API. */}}
+</script></body></html>
+
